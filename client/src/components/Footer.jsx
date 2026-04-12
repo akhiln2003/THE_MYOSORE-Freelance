@@ -71,7 +71,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} THE MYOSORE FITNESS. All rights reserved.
           </p>
           <p className="text-sm text-text-muted">
-            Designed & Developed by <a href="#" target="_blank" rel="noreferrer" className="text-primary hover:underline">Akhil N</a>
+            Designed & Developed by <a href="https://www.linkedin.com/in/n-akhil/" target="_blank" rel="noreferrer" className="text-primary hover:underline">Akhil N</a>
           </p>
         </div>
       </div>
