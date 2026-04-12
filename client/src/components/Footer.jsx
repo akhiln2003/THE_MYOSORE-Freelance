@@ -28,6 +28,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-heading font-semibold mb-4 text-text-main">Quick Links</h4>
             <ul className="space-y-3">
+              <li><Link to="/tools" className="text-text-muted hover:text-primary transition-colors text-primary font-medium">Tools</Link></li>
               <li><Link to="/about" className="text-text-muted hover:text-primary transition-colors">About Us</Link></li>
               <li><Link to="/services" className="text-text-muted hover:text-primary transition-colors">Our Services</Link></li>
               <li><Link to="/contact" className="text-text-muted hover:text-primary transition-colors">Contact</Link></li>
@@ -68,6 +69,9 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-text-muted mb-4 md:mb-0">
             &copy; {new Date().getFullYear()} THE MYOSORE FITNESS. All rights reserved.
+          </p>
+          <p className="text-sm text-text-muted">
+            Designed & Developed by <a href="#" target="_blank" rel="noreferrer" className="text-primary hover:underline">Akhil N</a>
           </p>
         </div>
       </div>

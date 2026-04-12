@@ -30,7 +30,8 @@ const About = () => {
           </motion.div>
         </section>
 
-        {/* Trainers Section */}
+        {/* Trainers Section - Hidden for now */}
+        {false && (
         <section>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold">Meet Our <span className="text-primary">Elite Trainers</span></h2>
@@ -88,7 +89,7 @@ const About = () => {
             </motion.div>
           </div>
         </section>
-
+        )}
         {/* Testimonials Section */}
         <section className="mt-24">
           <div className="text-center mb-16">
