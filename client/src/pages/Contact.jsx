@@ -92,7 +92,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold">Location</h4>
-                    <p className="text-text-muted mt-1">Myosore, Karnataka, India<br/>(Placeholder Address)</p>
+                    <p className="text-text-muted mt-1 leading-relaxed">House no.H-32 kp-1 Jaypee greens wish Town<br/>sector -133 noida uttarpradesh<br/>Pincode - 201304</p>
                   </div>
                 </li>
                 <li className="flex items-start space-x-4">
@@ -119,7 +119,7 @@ const Contact = () => {
             {/* Google Maps Integration */}
             <div className="glass-panel rounded-2xl overflow-hidden h-[300px]">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124738.45525501861!2d76.56564619478144!3d12.310625345714032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf70381d572ef9%3A0x2b89ece8c0f8396d!2sMysuru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                src="https://maps.google.com/maps?q=House%20no.H-32%20kp-1%20Jaypee%20greens%20wish%20Town%20sector%20133%20noida%20uttarpradesh%20201304&t=&z=13&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }} 

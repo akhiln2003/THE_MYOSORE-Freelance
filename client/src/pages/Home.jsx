@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Star, Quote, Dumbbell, HeartPulse, Trophy, Activity, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, Quote, Dumbbell, HeartPulse, Trophy, Activity, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const reviews = [
@@ -49,23 +49,35 @@ const servicesList = [
   { id: 4, title: 'Rehabilitation', description: 'Guided recovery exercises to heal injuries safely and strengthen affected areas.', icon: <Activity className="w-8 h-8 text-primary" /> }
 ];
 
+const faqs = [
+  {
+    question: "Does sweating mean fat loss?",
+    answer: "No, sweating does not directly mean fat loss. Sweat is your body's way of cooling down. You may lose temporary water weight, but actual fat loss happens when you burn more calories than you consume over time."
+  },
+  {
+    question: "What is the most important factor for weight loss?",
+    answer: "The most important factor is a calorie deficit — burning more calories than you eat. Along with that, strength training, proper nutrition (especially protein), sleep, and consistency play a key role."
+  },
+  {
+    question: "Can I lose weight without going to the gym?",
+    answer: "Yes, weight loss is possible without the gym through proper diet control and physical activity like walking, running, or home workouts. However, strength training helps maintain muscle and improves overall body composition."
+  },
+  {
+    question: "Why am I not losing weight even after working out?",
+    answer: "Common reasons include:\n• Eating more calories than you think\n• Lack of consistency\n• Poor sleep\n• High stress levels\n• Not tracking progress properly\n\nWeight loss requires a combination of training, nutrition, and lifestyle balance."
+  },
+  {
+    question: "Is cardio enough for fat loss?",
+    answer: "Cardio helps burn calories, but it is not enough alone. Combining strength training + cardio + proper diet gives the best and sustainable results."
+  },
+  {
+    question: "How long does it take to see results?",
+    answer: "You may start noticing changes in 2–4 weeks, but visible and sustainable results usually take 8–12 weeks, depending on consistency, diet, and training intensity."
+  }
+];
+
 const Home = () => {
-  const [currentReview, setCurrentReview] = useState(0);
-
-  const nextReview = () => {
-    setCurrentReview((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevReview = () => {
-    setCurrentReview((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextReview();
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
+  const [openFaq, setOpenFaq] = useState(null);
 
   return (
     <motion.div
@@ -212,90 +224,108 @@ const Home = () => {
         
         <div className="max-w-screen-xl mx-auto px-4 relative z-10">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-16 md:mb-20"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">Real <span className="text-primary">Transformations</span></h2>
-            <p className="text-text-muted text-lg max-w-2xl mx-auto">Don't just take our word for it. Here's what our champions have to say about their fitness journey with Coach Shiju and Coach Arya.</p>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">Client <span className="text-primary">Stories</span></h2>
+            <p className="text-text-muted text-lg max-w-2xl mx-auto">Real people, actual results. See what our community has achieved with dedicated effort and expert guidance.</p>
           </motion.div>
 
-          <div className="relative max-w-5xl mx-auto">
-            <div className="rounded-3xl bg-bg-slate/80 backdrop-blur-xl border border-white/5 shadow-[0_8px_30px_rgb(0,0,0,0.6)] relative overflow-hidden">
-              {/* Subtle inner top glow */}
-              <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-              
-              <div className="absolute -top-10 -left-10 text-white/[0.02] rotate-12 pointer-events-none">
-                <Quote size={200} />
-              </div>
-              
-              <div className="p-8 md:p-20 min-h-[450px] flex items-center justify-center relative z-10">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentReview}
-                    initial={{ opacity: 0, scale: 0.95, filter: 'blur(5px)' }}
-                    animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-                    exit={{ opacity: 0, scale: 1.05, filter: 'blur(5px)' }}
-                    transition={{ duration: 0.4 }}
-                    className="text-center w-full"
-                  >
-                    <div className="flex justify-center mb-8">
-                      {[...Array(reviews[currentReview].rating)].map((_, i) => (
-                         <Star key={i} className="text-accent fill-accent w-7 h-7 mx-1 drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]" />
-                      ))}
-                    </div>
-                    <p className="text-xl md:text-2xl font-light text-text-main mb-10 leading-relaxed md:leading-loose whitespace-pre-wrap">
-                      "{reviews[currentReview].text}"
-                    </p>
-                    <div className="mt-8 flex flex-col items-center justify-center space-y-4">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-dark p-[2px] shadow-[0_0_20px_rgba(57,255,20,0.3)]">
-                        <div className="w-full h-full bg-bg-dark rounded-full flex items-center justify-center text-primary font-bold text-2xl">
-                          {reviews[currentReview].name.charAt(0)}
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold font-heading text-white">{reviews[currentReview].name}</h4>
-                        <div className="text-sm text-text-muted mt-1 uppercase tracking-wider font-medium flex items-center justify-center gap-2">
-                          <span>{reviews[currentReview].time}</span>
-                          <span className="w-1 h-1 rounded-full bg-white/20"></span>
-                          <span className="text-primary/80">Google</span>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            {reviews.map((review, idx) => (
+              <motion.div
+                key={idx}
+                className="break-inside-avoid glass-panel p-8 rounded-2xl border border-white/5 hover:border-primary/40 transition-all duration-500 relative group bg-white/[0.02]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="absolute top-8 right-8 text-white/[0.03] group-hover:text-primary/[0.08] transition-colors duration-500">
+                  <Quote size={80} />
+                </div>
+                
+                <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/5 relative z-10">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/30 to-primary/5 flex items-center justify-center text-primary font-bold text-xl border border-primary/30 shadow-[0_0_15px_rgba(57,255,20,0.1)]">
+                    {review.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold font-heading text-base tracking-wide">{review.name}</h4>
+                    <p className="text-xs text-text-muted mt-1 uppercase tracking-widest">{review.time} • Google</p>
+                  </div>
+                </div>
 
-              {/* Slider Controls */}
-              <button 
-                onClick={prevReview}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/40 border border-white/10 backdrop-blur-md flex items-center justify-center text-text-main hover:bg-primary hover:text-bg-dark hover:scale-110 transition-all z-20 shadow-lg"
-                aria-label="Previous review"
+                <p className="text-text-main font-light leading-relaxed mb-8 whitespace-pre-wrap text-[16px] relative z-10">
+                  "{review.text}"
+                </p>
+
+                <div className="flex relative z-10 mt-auto">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="text-accent fill-accent w-5 h-5 mr-1 drop-shadow-[0_0_8px_rgba(212,175,55,0.3)]" />
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-bg-slate relative">
+        <div className="max-w-screen-md mx-auto px-4 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">Frequently Asked <span className="text-primary">Questions</span></h2>
+            <p className="text-text-muted text-lg max-w-xl mx-auto">Have questions? We are here to help you understand your fitness journey better.</p>
+          </motion.div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="glass-panel border border-white/5 rounded-2xl overflow-hidden"
               >
-                <ChevronLeft size={28} />
-              </button>
-              <button 
-                onClick={nextReview}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/40 border border-white/10 backdrop-blur-md flex items-center justify-center text-text-main hover:bg-primary hover:text-bg-dark hover:scale-110 transition-all z-20 shadow-lg"
-                aria-label="Next review"
-              >
-                <ChevronRight size={28} />
-              </button>
-            </div>
-            
-            {/* Progress Dots */}
-            <div className="flex justify-center mt-10 space-x-3">
-              {reviews.map((_, idx) => (
                 <button
-                  key={idx}
-                  onClick={() => setCurrentReview(idx)}
-                  className={`h-2 rounded-full transition-all duration-500 ease-out ${idx === currentReview ? 'bg-primary w-10 shadow-[0_0_10px_rgba(57,255,20,0.5)]' : 'bg-white/20 w-2 hover:bg-white/40'}`}
-                  aria-label={`Go to review ${idx + 1}`}
-                />
-              ))}
-            </div>
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none group"
+                >
+                  <span className="text-lg font-bold font-heading text-text-main group-hover:text-primary transition-colors pr-4">
+                    {faq.question}
+                  </span>
+                  <ChevronDown 
+                    className={`text-primary shrink-0 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} 
+                    size={24} 
+                  />
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <div className="px-6 pb-6 text-text-muted leading-relaxed border-t border-white/5 pt-4 whitespace-pre-wrap">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

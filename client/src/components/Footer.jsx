@@ -50,10 +50,6 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-heading font-semibold mb-4 text-text-main">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-start space-x-3 text-text-muted">
-                <MapPin size={20} className="text-primary shrink-0 mt-1" />
-                <span>Mysore, India</span>
-              </li>
               <li className="flex items-center space-x-3 text-text-muted">
                 <Phone size={20} className="text-primary shrink-0" />
                 <span>+91 96255 16326</span>
@@ -61,6 +57,10 @@ const Footer = () => {
               <li className="flex items-center space-x-3 text-text-muted">
                 <Mail size={20} className="text-primary shrink-0" />
                 <span>themyosore@gmail.com</span>
+              </li>
+              <li className="flex items-start space-x-3 text-text-muted">
+                <MapPin size={32} className="text-primary shrink-0 mt-1" />
+                <span>House no.H-32 kp-1 Jaypee greens wish Town sector -133 noida uttarpradesh</span>
               </li>
             </ul>
           </div>
