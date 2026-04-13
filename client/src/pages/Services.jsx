@@ -1,34 +1,76 @@
 import { motion } from 'framer-motion';
-import { Dumbbell, HeartPulse, Trophy, Activity } from 'lucide-react';
+import { Dumbbell, HeartPulse, Trophy, Activity, Apple, Users, Brain, Home as HomeIcon, Smile, Scale } from 'lucide-react';
 
 const servicesList = [
   {
     id: 1,
-    title: 'Personal Training',
-    description: 'Customized workout plans tailored to your specific goals, fitness level, and schedule. Get 1-on-1 attention to maximize results.',
-    icon: <Dumbbell className="w-10 h-10 text-primary" />,
+    title: 'Personal Training at Home',
+    description: 'Customized workout plans tailored to your specific goals and schedule in the comfort of your home. Get 1-on-1 attention to maximize results.',
+    icon: <HomeIcon className="w-10 h-10 text-primary" />,
     image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 2,
-    title: 'Senior Citizen Fitness',
+    title: 'Strength, Endurance, Flexibility & Coordination',
+    description: 'Comprehensive functional training programs to build overall physical capability and performance.',
+    icon: <Dumbbell className="w-10 h-10 text-primary" />,
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop'
+  },
+  {
+    id: 3,
+    title: 'Recreation for Children',
+    description: 'Fun and engaging physical activities designed specifically to keep kids active, healthy, and happy.',
+    icon: <Smile className="w-10 h-10 text-primary" />,
+    image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=2070&auto=format&fit=crop'
+  },
+  {
+    id: 4,
+    title: 'Rehabilitation Exercises',
+    description: 'Guided recovery exercises to heal injuries safely, strengthen affected areas, and prevent future complications.',
+    icon: <Activity className="w-10 h-10 text-primary" />,
+    image: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=2069&auto=format&fit=crop'
+  },
+  {
+    id: 5,
+    title: 'Weight Gain & Weight Loss Programs',
+    description: 'Structured nutrition and exercise plans designed for sustainable weight management and overall health improvement.',
+    icon: <Scale className="w-10 h-10 text-primary" />,
+    image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+  },
+  {
+    id: 6,
+    title: 'Exercise Program for Senior Citizens',
     description: 'Specially designed exercise programs focused on strength, balance, and mobility to ensure healthy aging and vitality.',
     icon: <HeartPulse className="w-10 h-10 text-primary" />,
     image: 'https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   },
   {
-    id: 3,
-    title: 'Sports Coaching',
-    description: 'Advanced training techniques for kids and adults to improve athletic performance, agility, and sport-specific skills.',
+    id: 7,
+    title: 'Sports Coaching for Kids & Adults',
+    description: 'Advanced training techniques to improve athletic performance, agility, and sport-specific skills across all ages.',
     icon: <Trophy className="w-10 h-10 text-primary" />,
     image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop'
   },
   {
-    id: 4,
-    title: 'Rehabilitation',
-    description: 'Guided recovery exercises to heal injuries safely, strengthen affected areas, and prevent future complications.',
-    icon: <Activity className="w-10 h-10 text-primary" />,
-    image: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=2069&auto=format&fit=crop'
+    id: 8,
+    title: 'Nutritional Counseling',
+    description: 'Expert dietary guidance to support your fitness journey, build healthy eating habits, and fuel your body for optimal performance.',
+    icon: <Apple className="w-10 h-10 text-primary" />,
+    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop'
+  },
+  {
+    id: 9,
+    title: 'Life Coach & NLP Therapist',
+    description: 'Mental and emotional support techniques to help you overcome barriers, build healthy habits, and develop a winner\'s mindset.',
+    icon: <Brain className="w-10 h-10 text-primary" />,
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1974&auto=format&fit=crop'
+  },
+  {
+    id: 10,
+    title: 'Cooperative Session',
+    description: 'Group training and partner workouts that foster teamwork, accountability, and shared fitness goals.',
+    icon: <Users className="w-10 h-10 text-primary" />,
+    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop'
   }
 ];
 

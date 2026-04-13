@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Star, Quote, Dumbbell, HeartPulse, Trophy, Activity, ArrowRight, ChevronDown } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, Quote, Dumbbell, HeartPulse, Trophy, Activity, ArrowRight, ChevronDown, Home as HomeIcon, Scale } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const reviews = [
@@ -43,10 +43,10 @@ const reviews = [
 ];
 
 const servicesList = [
-  { id: 1, title: 'Personal Training', description: 'Customized workout plans tailored to your specific goals and schedule.', icon: <Dumbbell className="w-8 h-8 text-primary" /> },
-  { id: 2, title: 'Senior Citizen Fitness', description: 'Specially designed exercise programs focused on strength and mobility.', icon: <HeartPulse className="w-8 h-8 text-primary" /> },
-  { id: 3, title: 'Sports Coaching', description: 'Advanced training techniques for kids and adults to improve performance.', icon: <Trophy className="w-8 h-8 text-primary" /> },
-  { id: 4, title: 'Rehabilitation', description: 'Guided recovery exercises to heal injuries safely and strengthen affected areas.', icon: <Activity className="w-8 h-8 text-primary" /> }
+  { id: 1, title: 'Personal Training at Home', description: 'Customized workout plans tailored to your specific goals and schedule in the comfort of your home.', icon: <HomeIcon className="w-8 h-8 text-primary" /> },
+  { id: 2, title: 'Strength, Endurance & Flexibility', description: 'Comprehensive functional training programs to build overall physical capability and performance.', icon: <Dumbbell className="w-8 h-8 text-primary" /> },
+  { id: 3, title: 'Weight Gain & Loss Programs', description: 'Structured nutrition and exercise plans designed for sustainable weight management.', icon: <Scale className="w-8 h-8 text-primary" /> },
+  { id: 4, title: 'Senior Citizen Fitness', description: 'Specially designed exercise programs focused on strength, balance, and mobility.', icon: <HeartPulse className="w-8 h-8 text-primary" /> }
 ];
 
 const faqs = [
@@ -166,12 +166,9 @@ const Home = () => {
             >
               <img 
                 src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" 
-                alt="Gym Equipment" 
+                alt="Personal Training" 
                 className="w-full h-full object-cover rounded-xl filter grayscale hover:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute top-8 left-[-20px] bg-primary text-bg-dark font-bold px-6 py-3 rounded-r-xl shadow-lg transform -rotate-2">
-                Premium Facility
-              </div>
             </motion.div>
           </div>
         </div>
@@ -180,17 +177,18 @@ const Home = () => {
       {/* Services Overview */}
       <section className="py-24 bg-bg-slate relative">
         <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex flex-col sm:flex-row justify-between sm:items-end mb-12 gap-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
+              className="text-left"
             >
               <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">Our <span className="text-primary">Services</span></h2>
               <p className="text-text-muted text-lg max-w-xl">Comprehensive fitness solutions designed to challenge and change you.</p>
             </motion.div>
-            <Link to="/services" className="hidden md:flex items-center text-primary hover:text-white transition-colors group shrink-0 mb-2">
+            <Link to="/services" className="inline-flex items-center text-primary hover:text-white transition-colors group shrink-0">
               View All <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -223,19 +221,25 @@ const Home = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="max-w-screen-xl mx-auto px-4 relative z-10">
-          <motion.div 
-            className="text-center mb-16 md:mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">Client <span className="text-primary">Stories</span></h2>
-            <p className="text-text-muted text-lg max-w-2xl mx-auto">Real people, actual results. See what our community has achieved with dedicated effort and expert guidance.</p>
-          </motion.div>
+          <div className="flex flex-col sm:flex-row justify-between sm:items-end mb-16 md:mb-20 gap-4">
+            <motion.div 
+              className="text-left"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">Client <span className="text-primary">Stories</span></h2>
+              <p className="text-text-muted text-lg max-w-2xl">Real people, actual results. See what our community has achieved with dedicated effort and expert guidance.</p>
+            </motion.div>
+            <Link to="/about" className="inline-flex items-center text-primary hover:text-white transition-colors group shrink-0">
+              View All <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
 
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {reviews.map((review, idx) => (
+            {reviews.slice(0, 3).map((review, idx) => (
               <motion.div
                 key={idx}
                 className="break-inside-avoid glass-panel p-8 rounded-2xl border border-white/5 hover:border-primary/40 transition-all duration-500 relative group bg-white/[0.02]"
