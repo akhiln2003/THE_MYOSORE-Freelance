@@ -66,7 +66,7 @@ const Testimonials = () => {
             </div>
             
             <div className="flex items-center space-x-4 mb-6 pb-6 border-b border-white/5 relative z-10">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-dark p-[2px] shadow-[0_0_15px_rgba(57,255,20,0.2)] group-hover:shadow-[0_0_25px_rgba(57,255,20,0.4)] transition-shadow duration-500">
+              <div className="shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-dark p-[2px] shadow-[0_0_15px_rgba(57,255,20,0.2)] group-hover:shadow-[0_0_25px_rgba(57,255,20,0.4)] transition-shadow duration-500">
                 <div className="w-full h-full bg-bg-dark rounded-full flex items-center justify-center text-primary font-bold text-xl">
                   {review.name.charAt(0)}
                 </div>

@@ -33,7 +33,7 @@ function App() {
         {loading ? (
           <Loader key="loader" />
         ) : (
-          <div className="flex flex-col min-h-screen bg-bg-dark text-text-main font-body" key="main-content">
+          <div className="flex flex-col min-h-screen overflow-x-hidden w-full relative bg-bg-dark text-text-main font-body" key="main-content">
             <Navbar />
             <main className="flex-grow">
               <Routes>

@@ -254,7 +254,7 @@ const Home = () => {
                 </div>
                 
                 <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/5 relative z-10">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/30 to-primary/5 flex items-center justify-center text-primary font-bold text-xl border border-primary/30 shadow-[0_0_15px_rgba(57,255,20,0.1)]">
+                  <div className="shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-primary/30 to-primary/5 flex items-center justify-center text-primary font-bold text-xl border border-primary/30 shadow-[0_0_15px_rgba(57,255,20,0.1)]">
                     {review.name.charAt(0)}
                   </div>
                   <div>
