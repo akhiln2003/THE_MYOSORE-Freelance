@@ -60,7 +60,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start space-x-3 text-text-muted">
                 <MapPin size={32} className="text-primary shrink-0 mt-1" />
-                <span>House no.H-32 kp-1 Jaypee greens wish Town sector -133 noida uttarpradesh</span>
+                <span>H-32 kp-1 Jaypee greens wish Town sector -133 noida uttarpradesh</span>
               </li>
             </ul>
           </div>

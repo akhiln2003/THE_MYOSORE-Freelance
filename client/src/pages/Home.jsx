@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import {  AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote, Dumbbell, HeartPulse, Trophy, Activity, ArrowRight, ChevronDown, Home as HomeIcon, Scale } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -151,7 +151,7 @@ const Home = () => {
                 At THE MYOSORE FITNESS, we deliver more than just workouts. We provide a transformational experience tailored to your unique body, lifestyle, and goals. 
               </p>
               <p className="text-text-muted text-lg mb-8 leading-relaxed">
-                Whether you need dedicated 1-on-1 personal training, sports specific coaching, rehabilitation or senior wellness programs, our elite trainers—including Coach Shiju and Coach Arya—are committed to guiding you every step of the way.
+                Whether you need dedicated 1-on-1 personal training, sports specific coaching, rehabilitation or senior wellness programs, our elite trainers are committed to guiding you every step of the way.
               </p>
               <Link to="/about" className="inline-flex items-center text-primary font-semibold hover:text-white transition-colors group">
                 Meet our trainers <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
