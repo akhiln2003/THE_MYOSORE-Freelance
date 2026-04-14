@@ -1,4 +1,4 @@
-import {  AnimatePresence } from 'framer-motion';
+import { motion , AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote, Dumbbell, HeartPulse, Trophy, Activity, ArrowRight, ChevronDown, Home as HomeIcon, Scale } from 'lucide-react';
 import { Link } from 'react-router-dom';
