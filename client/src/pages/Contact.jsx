@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Send, CheckCircle } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -87,12 +87,16 @@ const Contact = () => {
               <h3 className="text-2xl font-heading font-bold mb-6 text-primary">Contact Information</h3>
               <ul className="space-y-6">
                 <li className="flex items-start space-x-4">
-                  <div className="bg-white/10 p-3 rounded-full text-primary shrink-0">
-                    <MapPin size={24} />
-                  </div>
+                  <a href="https://instagram.com/themyosore" target="_blank" rel="noreferrer" className="bg-white/10 p-3 rounded-full text-primary shrink-0 inline-flex items-center justify-center">
+                    <FaInstagram size={24} />
+                  </a>
                   <div>
-                    <h4 className="text-lg font-bold">Location</h4>
-                    <p className="text-text-muted mt-1 leading-relaxed">House no.H-32 kp-1 Jaypee greens wish Town<br/>sector -133 noida uttarpradesh<br/>Pincode - 201304</p>
+                    <h4 className="text-lg font-bold">Instagram</h4>
+                    <p className="text-text-muted mt-1">
+                      <a href="https://instagram.com/themyosore" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
+                        @themyosore
+                      </a>
+                    </p>
                   </div>
                 </li>
                 <li className="flex items-start space-x-4">

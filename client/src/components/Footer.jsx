@@ -58,10 +58,7 @@ const Footer = () => {
                 <Mail size={20} className="text-primary shrink-0" />
                 <span>themyosore@gmail.com</span>
               </li>
-              <li className="flex items-start space-x-3 text-text-muted">
-                <MapPin size={32} className="text-primary shrink-0 mt-1" />
-                <span>H-32 kp-1 Jaypee greens wish Town sector -133 noida uttarpradesh</span>
-              </li>
+              
             </ul>
           </div>
         </div>

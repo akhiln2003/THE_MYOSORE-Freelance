@@ -154,7 +154,7 @@ const Home = () => {
                 Whether you need dedicated 1-on-1 personal training, sports specific coaching, rehabilitation or senior wellness programs, our elite trainers are committed to guiding you every step of the way.
               </p>
               <Link to="/about" className="inline-flex items-center text-primary font-semibold hover:text-white transition-colors group">
-                Meet our trainers <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                About Us <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
             <motion.div
