@@ -153,9 +153,9 @@ const Home = () => {
               <p className="text-text-muted text-lg mb-8 leading-relaxed">
                 Whether you need dedicated 1-on-1 personal training, sports specific coaching, rehabilitation or senior wellness programs, our elite trainers are committed to guiding you every step of the way.
               </p>
-              <Link to="/about" className="inline-flex items-center text-primary font-semibold hover:text-white transition-colors group">
+              {/* <Link to="/about" className="inline-flex items-center text-primary font-semibold hover:text-white transition-colors group">
                 About Us <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </Link> */}
             </motion.div>
             <motion.div
               className="relative h-[500px] rounded-2xl overflow-hidden glass-panel p-2"
